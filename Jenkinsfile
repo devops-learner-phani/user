@@ -1,13 +1,5 @@
-pipeline {
-  agent any
-  options {
-    ansiColor('xterm')
-  }
-  stages {
-    stage('Download Dependencies') {
-      steps {
-        sh 'npm install'
-      }
-    }
-  }
-}
+@Library('roboshop-jenkins-shared-library') _
+
+env.COMPONENT = "user"
+
+nodejs()
